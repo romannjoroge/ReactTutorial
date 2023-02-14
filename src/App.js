@@ -1,12 +1,16 @@
 import './App.css';
+import Navbar from './Navbar';
+import Home from './Home';
 
 function App() {
   let name = 'ROMAN';
+  let testList = [1, 2, 3, 4, 5];
+
   return (
     <div className="App">
+      <Navbar />
       <div className="content">
-        <h1>App Component</h1>
-        <p>Hello { name } this is your first semi-dynamic react component</p>
+        <Home />
       </div>
     </div>
   );
