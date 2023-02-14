@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 function Home(){
+    const [meal, setMeal] = useState('Choose A Meal');
 
     function clickEvent(){
         console.log("I'm ticklish stop clicking me");
@@ -9,6 +12,10 @@ function Home(){
         console.log(e);
     }
 
+    function changeMeal(){
+        setMeal('Ugali');
+    }
+
     return (
         <div className="home">
             <h2>Homepage</h2>
@@ -16,6 +23,9 @@ function Home(){
             <button onClick={ (e) => {
                 greetMe('Roman', e); 
             } }>Greet Me</button>
+            <h2>Get a New Meal</h2>
+            <p>{ meal }</p>
+            <button onClick={ changeMeal }>Get Meal</button>
         </div>
     );
 }
