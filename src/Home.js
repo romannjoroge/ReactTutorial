@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Blogs from "./Blogs";
 
 function Home(){
     const [meal, setMeal] = useState('Choose A Meal');
@@ -34,15 +35,7 @@ function Home(){
             <h2>Get a New Meal</h2>
             <p>{ meal }</p>
             <button onClick={ changeMeal }>Get Meal</button>
-            <h2>Blogs</h2>
-            <div className="blogs">
-                { blogs.map((blog) => (
-                    <div className="blog-preview" key = {blog.id}>
-                        <h2>{ blog.title }</h2>
-                        <p>Written By: { blog.author }</p>
-                    </div>
-                ))}
-            </div>
+            <Blogs blogs={blogs} title="All Blogs"/>
         </div>
     );
 }
