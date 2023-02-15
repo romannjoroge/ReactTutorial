@@ -12,6 +12,11 @@ function Home(){
         ]
     );
 
+    function deleteBlog(id) {
+        let newBlogs = blogs.filter((blog) => blog.id !== id);
+        setBlogs(newBlogs);
+    }
+
     function clickEvent(){
         console.log("I'm ticklish stop clicking me");
     }
@@ -35,7 +40,7 @@ function Home(){
             <h2>Get a New Meal</h2>
             <p>{ meal }</p>
             <button onClick={ changeMeal }>Get Meal</button>
-            <Blogs blogs={blogs} title="All Blogs"/>
+            <Blogs blogs={blogs} title="All Blogs" deleteBlog={deleteBlog}/>
         </div>
     );
 }
